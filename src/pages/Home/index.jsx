@@ -3,6 +3,7 @@ import { Container } from './styles.js'
 
 import { Header } from '../../components/Header/index.jsx'
 import { Button } from '../../components/Button/index.jsx'
+import { Tag } from "../../components/Tag/index.jsx";
 
 export function Home() {
   return(
