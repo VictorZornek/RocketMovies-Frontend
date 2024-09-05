@@ -1,9 +1,8 @@
 import { TfiPlus } from "react-icons/tfi";
-import { Container } from './styles.js'
+import { Container, Content } from './styles.js'
 
 import { Header } from '../../components/Header/index.jsx'
 import { Button } from '../../components/Button/index.jsx'
-import { Tag } from "../../components/Tag/index.jsx";
 import { NoteMovie } from '../../components/NoteMovie'
 
 export function Home() {
@@ -11,7 +10,7 @@ export function Home() {
     <Container>
       <Header />
 
-      <main>
+      <Content>
         <div>
           <h1>Meus Filmes</h1>
 
@@ -55,7 +54,7 @@ export function Home() {
         }}          
         />
       
-      </main>
+      </Content>
     </Container>
   )
 }
