@@ -69,6 +69,10 @@ export const Profile = styled.div`
     > img {
         height: 6.4rem;
         width: 6.4rem;
+
         border-radius: 50%;
+        border-width: 1px;
+        border-style: solid;
+        border-color: ${({ theme }) => theme.COLORS.BACKGROUND_400};
     }
 `
