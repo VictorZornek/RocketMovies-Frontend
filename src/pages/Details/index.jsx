@@ -1,4 +1,5 @@
 import { TfiPlus } from "react-icons/tfi";
+import { FiUser, FiLock } from 'react-icons/fi'
 import { Container } from './styles.js'
 
 import { Header } from '../../components/Header/index.jsx'
@@ -19,6 +20,7 @@ export function Details() {
             </span>
           } />
         </div>
+
       </main>
 
     </Container>
