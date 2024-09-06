@@ -1,5 +1,4 @@
 import { Container } from './styles.js';
-import { IoStarSharp } from "react-icons/io5";
 
 import { Tag } from '../Tag';
 import { RatingStars } from '../RatingStars/index.jsx';

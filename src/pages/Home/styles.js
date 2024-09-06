@@ -3,6 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
     width: 100%;
     height: 100vh;
+
+    display: grid;
+    grid-template-rows: 10.5rem auto;
+    grid-template-areas: 
+    "header"
+    "content";
 `
 
 export const Content = styled.main`
@@ -29,4 +35,15 @@ export const Content = styled.main`
             color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
         }
     }
+
+    .notesMovies {
+        display: flex;
+        flex-direction: column;
+        max-height: 69vh;
+        overflow-y: auto;
+
+        scrollbar-width: thin;
+        scrollbar-color: ${({ theme }) => theme.COLORS.PINK} ${({ theme }) => theme.COLORS.BACKGROUND_900};
+    }
+
 `
