@@ -47,3 +47,24 @@ export const Content = styled.main`
     }
 
 `
+
+export const ButtonAddMovie = styled.button `
+    height: 4.8rem;
+
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+
+    padding: 1.2rem 3.2rem;
+
+    color: ${({ theme }) => theme.COLORS.BLACK_500};
+    background-color: ${({ theme }) => theme.COLORS.PINK};
+
+    border: none;
+    border-radius: .8rem;
+    
+
+    > svg {
+        color: ${({ theme }) => theme.COLORS.BLACK_900};
+    }
+`

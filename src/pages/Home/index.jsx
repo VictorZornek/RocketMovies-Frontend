@@ -1,8 +1,7 @@
 import { TfiPlus } from "react-icons/tfi";
-import { Container, Content } from './styles.js'
+import { Container, Content, ButtonAddMovie } from './styles.js'
 
 import { Header } from '../../components/Header/index.jsx'
-import { Button } from '../../components/Button/index.jsx'
 import { NoteMovie } from '../../components/NoteMovie'
 
 export function Home() {
@@ -14,11 +13,10 @@ export function Home() {
         <div>
           <h1>Meus Filmes</h1>
 
-          <Button title={
-            <span>
-              <TfiPlus /> Adicionar filme
-            </span>
-          } />
+          <ButtonAddMovie>
+            <TfiPlus />
+            Adicionar filme
+          </ButtonAddMovie>
         </div>
         
         <div className="notesMovies">
