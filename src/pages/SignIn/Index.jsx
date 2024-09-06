@@ -6,22 +6,21 @@ import { Button } from '../../components/Button';
 import { ButtonText } from '../../components/ButtonText';
 
 
-export function SignUp() {
+export function SignIn() {
     return(
         <Container>
             <Form>
                 <h1>RocketMovies</h1>
                 <p>Aplicação para acompanhar tudo que assistir.</p>
 
-                <h2>Crie sua conta</h2>
+                <h2>Faça seu login</h2>
 
-                <Input type='text' placeholder='Nome' icon={FiUser} required />
                 <Input type='email' placeholder='E-mail' icon={FiMail} required />
                 <Input type='password' placeholder='Senha' icon={FiLock} required />
 
-                <Button title='Cadastrar' />
+                <Button title='Entrar' />
 
-                <ButtonText title='Voltar para o login' icon={FiArrowLeft}/>
+                <ButtonText title='Criar conta'/>
             </Form>
 
             <Background />
