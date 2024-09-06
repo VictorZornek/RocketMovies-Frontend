@@ -1,9 +1,11 @@
 import { Container } from './styles.js';
+import { IoStarSharp } from "react-icons/io5";
 
 import { Tag } from '../Tag';
+import { RatingStars } from '../RatingStars/index.jsx';
 
 export function NoteMovie({ data, ...rest }) {
-    const descriptionLimit = 362
+    const descriptionLimit = 415
 
     const changedDescription = data.description.length > descriptionLimit ? data.description.substring(0, descriptionLimit) + '...' : data.description;
 
@@ -11,7 +13,7 @@ export function NoteMovie({ data, ...rest }) {
         <Container {...rest}>
             <h1>{data.title}</h1>
 
-            <span>{data.rating}</span>
+            <RatingStars rating={data.rating} />
 
             <p>{changedDescription}</p>
 
