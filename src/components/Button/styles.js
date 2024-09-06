@@ -3,6 +3,8 @@ import styled from "styled-components";
 export const Container = styled.button`
     height: 5.6rem;
 
+    font-weight: 500;
+
     border: none;
     border-radius: 8px;
 
