@@ -6,7 +6,7 @@ import { Button } from '../../components/Button';
 import { ButtonText } from '../../components/ButtonText';
 
 
-export function SignIn() {
+export function SignUp() {
     return(
         <Container>
             <Form>
