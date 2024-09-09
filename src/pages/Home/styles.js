@@ -42,8 +42,23 @@ export const Content = styled.main`
         max-height: 69vh;
         overflow-y: auto;
 
-        scrollbar-width: thin;
-        scrollbar-color: ${({ theme }) => theme.COLORS.PINK} ${({ theme }) => theme.COLORS.BACKGROUND_900};
+
+    }
+
+    .notesMovies::-webkit-scrollbar {
+        width: .6rem;
+        height: 1rem;
+
+        margin-left: 10px;
+    }
+
+    .notesMovies::-webkit-scrollbar-thumb {
+        background-color: ${({ theme }) => theme.COLORS.PINK};
+        border-radius: 5px;
+    }
+
+    .notesMovies::-webkit-scrollbar-track {
+        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_900};
     }
 
 `
