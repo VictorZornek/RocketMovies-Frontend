@@ -39,6 +39,15 @@ export const Form = styled.form`
         color: ${({ theme }) => theme.COLORS.WHITE_500};
     }
 
+    > a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .8rem;
+        
+        color: ${({ theme }) => theme.COLORS.PINK};
+    }
+
     :nth-child(5) {
         margin: .8rem 0;
     }

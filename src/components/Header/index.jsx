@@ -7,7 +7,7 @@ export function Header() {
 
             <Input type="text" placeholder="Pesquisar pelo título"/>
 
-            <Profile>
+            <Profile to='/profile'>
                 <div>
                     <strong>Victor Zornek</strong>
                     <a>sair</a>

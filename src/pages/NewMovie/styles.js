@@ -17,6 +17,14 @@ export const Content = styled.div`
     margin: 4rem 12.3rem 0 13rem;
     max-height: 65vh;
 
+    > a {
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+
+        color: ${({ theme }) => theme.COLORS.PINK};
+    }
+
     > Form{
         overflow-y: auto;
 

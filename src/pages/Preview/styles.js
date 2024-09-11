@@ -17,4 +17,12 @@ export const Content = styled.div`
     max-height: 65vh;
 
     margin: 4rem auto;
+
+    > a {
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+
+        color: ${({ theme }) => theme.COLORS.PINK};
+    }
 `

@@ -10,6 +10,14 @@ export const Header = styled.div`
     padding: 6.4rem 0 5.9rem 14.4rem;
 
     background-color: ${({ theme }) => theme.COLORS.PINK_TRANSPARENT};
+
+    > a {
+        display: flex;
+        align-items: center;
+        gap: .8rem;
+
+        color: ${({ theme }) => theme.COLORS.PINK};
+    }
 `
 
 export const Avatar = styled.div`

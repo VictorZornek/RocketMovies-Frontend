@@ -9,7 +9,7 @@ export function NoteMovie({ data, ...rest }) {
     const changedDescription = data.description.length > descriptionLimit ? data.description.substring(0, descriptionLimit) + '...' : data.description;
 
     return(
-        <Container {...rest}>
+        <Container {...rest} to={`/preview/${data.id}`}>
             <h1>{data.title}</h1>
 
             <RatingStars rating={data.rating} />

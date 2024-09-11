@@ -1,9 +1,9 @@
+import { Link } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 
 import { Container, Content, Form, Section, Button } from "./styles.js";
 
 import { Header } from '../../components/Header'
-import { ButtonText } from '../../components/ButtonText'
 import { Input } from '../../components/Input'
 import { TextArea } from '../../components/TextArea'
 import { Markers } from "../../components/Markers"
@@ -14,7 +14,10 @@ export function NewMovie() {
             <Header />
 
             <Content>
-                <ButtonText title='Voltar' icon={FiArrowLeft} />
+                <Link to='/'>
+                    <FiArrowLeft />
+                    Voltar
+                </Link>
 
 
                 <Form >

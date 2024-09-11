@@ -39,6 +39,12 @@ export const Form = styled.form`
         color: ${({ theme }) => theme.COLORS.WHITE_500};
     }
 
+    > a {
+        text-align: center;
+        
+        color: ${({ theme }) => theme.COLORS.PINK};
+    }
+
     :nth-child(4) {
         margin-bottom: .8rem;
     }

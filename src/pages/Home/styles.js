@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -65,7 +66,7 @@ export const Content = styled.main`
 
 `
 
-export const ButtonAddMovie = styled.button `
+export const ButtonAddMovie = styled(Link) `
     height: 4.8rem;
 
     display: flex;

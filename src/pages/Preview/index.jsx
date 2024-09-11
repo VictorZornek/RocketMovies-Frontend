@@ -1,9 +1,9 @@
 import { FiArrowLeft } from 'react-icons/fi'
 
+import { Link } from 'react-router-dom'
 import { Container, Content } from './styles.js'
 
 import { Header } from '../../components/Header'
-import { ButtonText } from '../../components/ButtonText'
 import { PreviewNoteMovie } from '../../components/PreviewNoteMovie'
 
 export function Preview() {
@@ -12,7 +12,10 @@ export function Preview() {
             <Header />
 
             <Content>
-                <ButtonText title='Voltar' icon={FiArrowLeft}/>
+                <Link to='/'>
+                    <FiArrowLeft />
+                    Voltar
+                </Link>
 
                 <PreviewNoteMovie data={{
                     title: 'Interestellar',
