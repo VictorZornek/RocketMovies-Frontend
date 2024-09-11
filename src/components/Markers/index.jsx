@@ -14,7 +14,7 @@ export function Markers({ ...rest}) {
             </span>
 
             <div>
-                <input type="text" placeholder='Novo marcador' icon={FiPlus} {...rest} />
+                <input type="text" placeholder='Novo marcador' {...rest} />
                 <ButtonText icon={FiPlus} />
             </div>
         </Container>

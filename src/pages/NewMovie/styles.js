@@ -40,11 +40,9 @@ export const Content = styled.div`
 `
 
 export const Form = styled.form`
-    max-height: 70vh;
+    max-height: 80vh;
 
     margin-top: 2.4rem;
-
-
 
     > h1 {
         font-size: 3.6rem;
@@ -69,4 +67,22 @@ export const Section = styled.section`
 
         color: ${({ theme }) => theme.COLORS.GRAY_900};
     }
+`
+
+export const Button = styled.button`
+    width: 100%;
+    height: 5.6rem;
+
+    padding: 1.75rem 0;
+
+    font-weight: 550;
+
+    border: none;
+    border-radius: 1rem;
+
+    background-color: ${({ theme, $isSave }) => 
+        $isSave ? theme.COLORS.PINK : theme.COLORS.BACKGROUND_BLACK_700};
+
+    color: ${({ theme, $isSave }) => 
+        $isSave ? theme.COLORS.BACKGROUND_400 : theme.COLORS.PINK};
 `

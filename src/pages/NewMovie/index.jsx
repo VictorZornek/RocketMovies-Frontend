@@ -1,12 +1,12 @@
 import { FiArrowLeft } from "react-icons/fi";
 
-import { Container, Content, Form, Section } from "./styles.js";
+import { Container, Content, Form, Section, Button } from "./styles.js";
 
 import { Header } from '../../components/Header'
 import { ButtonText } from '../../components/ButtonText'
 import { Input } from '../../components/Input'
 import { TextArea } from '../../components/TextArea'
-import { Markers } from "../../components/Markers";
+import { Markers } from "../../components/Markers"
 
 export function NewMovie() {
     return(
@@ -32,6 +32,12 @@ export function NewMovie() {
 
                         <Markers />
                     </Section>
+
+                    <div>
+                        <Button>Excluir filme</Button>
+                        <Button $isSave>Salvar alterações</Button>
+                    </div>
+
                 </Form>
             </Content>
         </Container>
