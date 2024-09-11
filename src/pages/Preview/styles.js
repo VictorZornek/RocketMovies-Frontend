@@ -16,12 +16,14 @@ export const Content = styled.div`
 
     max-height: 65vh;
 
-    margin: 4rem auto;
+    padding: 4rem 10rem 0 11.6rem;
 
     > a {
         display: flex;
         align-items: center;
         gap: .8rem;
+
+        max-width: fit-content;
 
         color: ${({ theme }) => theme.COLORS.PINK};
     }
