@@ -5,13 +5,13 @@ import GlobalStyle from './styles/global.js'
 
 import theme from './styles/theme.js'
 
-import { NewMovie } from './pages/NewMovie/index.jsx'
+import { Routes } from './routes'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <NewMovie />
+      <Routes />
     </ThemeProvider>
   </StrictMode>,
 )
