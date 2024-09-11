@@ -1,11 +1,12 @@
 import { FiArrowLeft } from "react-icons/fi";
 
-import { Container, Content, Form } from "./styles.js";
+import { Container, Content, Form, Section } from "./styles.js";
 
 import { Header } from '../../components/Header'
 import { ButtonText } from '../../components/ButtonText'
 import { Input } from '../../components/Input'
 import { TextArea } from '../../components/TextArea'
+import { Markers } from "../../components/Markers";
 
 export function NewMovie() {
     return(
@@ -25,10 +26,13 @@ export function NewMovie() {
                     </div>
 
                     <TextArea placeholder='Observações' />
+
+                    <Section>
+                        <span>Marcadores</span>
+
+                        <Markers />
+                    </Section>
                 </Form>
-
-
-                
             </Content>
         </Container>
     )

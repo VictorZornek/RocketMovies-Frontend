@@ -40,7 +40,7 @@ export const Content = styled.div`
 `
 
 export const Form = styled.form`
-    max-height: 65vh;
+    max-height: 70vh;
 
     margin-top: 2.4rem;
 
@@ -59,4 +59,14 @@ export const Form = styled.form`
         margin: 4rem 0;
     }
 
+`
+
+export const Section = styled.section`
+    width: 100%;
+
+    > span {
+        font-size: 2rem;
+
+        color: ${({ theme }) => theme.COLORS.GRAY_900};
+    }
 `
