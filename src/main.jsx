@@ -5,13 +5,13 @@ import GlobalStyle from './styles/global.js'
 
 import theme from './styles/theme.js'
 
-import { Preview } from './pages/Preview/index.jsx'
+import { NewMovie } from './pages/NewMovie/index.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Preview />
+      <NewMovie />
     </ThemeProvider>
   </StrictMode>,
 )
