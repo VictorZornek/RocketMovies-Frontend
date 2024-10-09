@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { FiMail, FiLock } from "react-icons/fi";
 import { Container, Form, Background } from "./styles";
+
+import { MyContext } from "../../myContext";
 
 import { Input } from '../../components/Input';
 import { Button } from '../../components/Button';
