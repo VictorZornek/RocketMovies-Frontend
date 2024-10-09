@@ -40,7 +40,7 @@ export const Form = styled.form`
     }
 
     > a {
-        text-align: center;
+        align-self: center;
         max-width: fit-content;
         
         color: ${({ theme }) => theme.COLORS.PINK};

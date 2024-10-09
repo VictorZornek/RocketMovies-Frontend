@@ -42,7 +42,7 @@ export const Form = styled.form`
     > a {
         display: flex;
         align-items: center;
-        justify-content: center;
+        align-self: center;
         gap: .8rem;
 
         max-width: fit-content;
