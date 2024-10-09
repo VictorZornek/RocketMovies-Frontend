@@ -15,7 +15,7 @@ export const Container = styled.div`
 export const Content = styled.main`
     grid-area: content;
     
-    padding: 0 10.6rem;
+    padding: 0 11.6rem;
 
     > div {
         display: flex;
@@ -42,7 +42,7 @@ export const Content = styled.main`
     .notesMovies {
         display: flex;
         flex-direction: column;
-        max-height: 65vh;
+        max-height: 60vh;
         overflow-y: auto;
 
 

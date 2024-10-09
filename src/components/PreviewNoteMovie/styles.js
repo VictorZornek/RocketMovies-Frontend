@@ -48,8 +48,6 @@ export const Container = styled.div`
     }
 
     > .description {
-        max-width: 111rem;
-
         text-align: justify;
 
     }

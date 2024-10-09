@@ -22,6 +22,8 @@ export const Content = styled.div`
         align-items: center;
         gap: .8rem;
 
+        max-width: fit-content;
+
         color: ${({ theme }) => theme.COLORS.PINK};
     }
 
