@@ -33,6 +33,13 @@ function AuthProvider({ children }) {
 
     }
 
+    function signOut() {
+        localStorage.removeItem("@rocketnotes:token")
+        localStorage.removeItem("@rocketnotes:user")
+
+        setData({})
+    }
+
     useEffect(() => {
         const token = localStorage.getItem("@rocketnotes:token")
         const user = localStorage.getItem("@rocketnotes:user")
@@ -45,12 +52,13 @@ function AuthProvider({ children }) {
                 user: JSON.parse(user)    // JSON.parse(user) faz o processo contrário ao stringify, ou seja, transforma uma string em objeto
             })
         }
-        
+
     }, [])
 
     return (
         <AuthContext.Provider value={{ 
             signIn,
+            signOut,
             user: data.user 
         }}>
             {children}
