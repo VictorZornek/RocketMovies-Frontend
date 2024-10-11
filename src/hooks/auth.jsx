@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 
 import { api } from "../services/api";
 
@@ -13,6 +13,9 @@ function AuthProvider({ children }) {
         try {
             const response = await api.post("/sessions", { email, password })
             const { user, token } = response.data
+
+            localStorage.setItem("@rocketnotes:user", JSON.stringify(user))    // JSON.stringify transforma um objeto em texto
+            localStorage.setItem("@rocketnotes:token", token)
 
             api.defaults.headers.common['Authorization'] = `Bearer ${token}`
 
@@ -30,6 +33,20 @@ function AuthProvider({ children }) {
 
     }
 
+    useEffect(() => {
+        const token = localStorage.getItem("@rocketnotes:token")
+        const user = localStorage.getItem("@rocketnotes:user")
+
+        if (token && user) {
+            api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+
+            setData({
+                token,
+                user: JSON.parse(user)    // JSON.parse(user) faz o processo contrário ao stringify, ou seja, transforma uma string em objeto
+            })
+        }
+        
+    }, [])
 
     return (
         <AuthContext.Provider value={{ 
