@@ -1,12 +1,22 @@
+import { useState } from "react";
 import { FiArrowLeft, FiLock, FiUser, FiMail, FiCamera } from "react-icons/fi";
-
 import { Link } from "react-router-dom";
+
+import { useAuth } from "../../hooks/auth"
+
 import { Container, Header, Form, Avatar } from "./styles";
 
 import { Input } from "../../components/Input";
 import { Button } from "../../components/Button";
 
 export function Profile() {
+    const { user } = useAuth()
+
+    const [name, setName] = useState(user.name)
+    const [email, setEmail] = useState(user.email)
+    const [oldPassword, setOldPassword] = useState()
+    const [newPassword, setNewPassword] = useState()
+
     return(
         <Container>
             <Header>
@@ -28,13 +38,37 @@ export function Profile() {
                 </Avatar>
 
                 <div className='wrap-user-email'>
-                    <Input value='Victor Zornek' icon={FiUser} disabled />
-                    <Input value='vzornek@gmail.com' icon={FiMail} disabled />
+                    <Input 
+                        placeholder='Nome'
+                        type='text'
+                        value={name} 
+                        icon={FiUser} 
+                        onChange={e => setName(e.target.value)}               
+                    />
+
+                    <Input 
+                        placeholder='E-mail'
+                        type='email'
+                        value={email} 
+                        icon={FiMail} 
+                        onChange={e => setEmail(e.target.value)}
+                    />
                 </div>
 
                 <div className='wrap-password'>
-                    <Input placeholder='Senha atual' icon={FiLock} />
-                    <Input placeholder='Nova senha' icon={FiLock} />
+                    <Input 
+                        placeholder='Senha atual' 
+                        type='password' 
+                        icon={FiLock} 
+                        onChange={e => setOldPassword(e.target.value)}
+                    />
+
+                    <Input 
+                        placeholder='Nova senha' 
+                        type='password' 
+                        icon={FiLock} 
+                        onChange={e => setNewPassword(e.target.value)}
+                    />
                 </div>
 
 
