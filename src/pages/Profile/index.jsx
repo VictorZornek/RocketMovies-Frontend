@@ -2,7 +2,11 @@ import { useState } from "react";
 import { FiArrowLeft, FiLock, FiUser, FiMail, FiCamera } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
+import { api } from "../../services/api";
+
 import { useAuth } from "../../hooks/auth"
+
+import avatarPlaceholder from '../../assets/avatar_placeholder.svg';
 
 import { Container, Header, Form, Avatar } from "./styles";
 
@@ -17,6 +21,12 @@ export function Profile() {
     const [oldPassword, setOldPassword] = useState()
     const [newPassword, setNewPassword] = useState()
 
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
+   
+    const [avatar, setAvatar] = useState(avatarUrl)
+    const [avatarFile, setAvatarFile] = useState(null)
+
+
     async function handleUpdate() {
         const user = { 
             name,
@@ -25,7 +35,15 @@ export function Profile() {
             old_password: oldPassword
         }
 
-        await updateProfile({ user })
+        await updateProfile({ user, avatarFile })
+    }
+
+    function handleChangeAvatar(event) {
+        const file = event.target.files[0]
+        const imagePreview = URL.createObjectURL(file)
+
+        setAvatarFile(file)
+        setAvatar(imagePreview)
     }
 
     return(
@@ -39,12 +57,16 @@ export function Profile() {
 
             <Form>
                 <Avatar>
-                    <img src="https://github.com/VictorZornek.png" alt="Foto do usuário" />
+                    <img src={avatar} alt="Foto do usuário" />
 
                     <label htmlFor="avatar">
                         <FiCamera />
 
-                        <input id="avatar" type="file" />
+                        <input 
+                            id="avatar" 
+                            type="file" 
+                            onChange={handleChangeAvatar} 
+                        />
                     </label>
                 </Avatar>
 

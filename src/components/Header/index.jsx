@@ -1,12 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import { Container, Profile, Input } from "./styles";
 
+import { api } from "../../services/api";
+
 import { useAuth } from "../../hooks/auth";
 
 export function Header() {
-    const { signOut } = useAuth();
+    const { user, signOut } = useAuth();
 
     const navigate = useNavigate()
+
+    const avatarUrl = user.avatar ? `${api.defaults.baseURL}/files/${user.avatar}` : avatarPlaceholder;
 
     function handleSignOut(event) {
         event.preventDefault()
@@ -22,11 +26,11 @@ export function Header() {
 
             <Profile to='/profile'>
                 <div>
-                    <strong>Victor Zornek</strong>
+                    <strong>{user.name}</strong>
                     <a onClick={handleSignOut} >sair</a>
                 </div>
 
-                <img src="https://github.com/VictorZornek.png" alt="Foto do usuário" />
+                <img src={avatarUrl} alt={user.name} />
             </Profile>
         </Container>
     )
