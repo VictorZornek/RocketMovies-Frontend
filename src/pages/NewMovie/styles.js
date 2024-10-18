@@ -77,6 +77,10 @@ export const Section = styled.section`
 
         color: ${({ theme }) => theme.COLORS.GRAY_900};
     }
+
+    > div {
+        display: flex;
+    }
 `
 
 export const Button = styled.button`

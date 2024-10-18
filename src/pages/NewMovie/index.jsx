@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 
@@ -9,6 +10,14 @@ import { TextArea } from '../../components/TextArea'
 import { Markers } from "../../components/Markers"
 
 export function NewMovie() {
+    const [links, setLinks] = useState([])
+    const [newLink, setNewLink] = useState("")
+
+    function handleAddLink() {
+        setLinks(prevState => [...prevState, newLink])
+        setNewLink("")
+    }
+
     return(
         <Container>
             <Header />
@@ -32,8 +41,29 @@ export function NewMovie() {
 
                     <Section>
                         <span>Marcadores</span>
+                        
+                        <div>
+                            {
+                                links.map((link, index) => (
+                                    <Markers 
+                                        key={String(index)}
+                                        type='text'
+                                        value={link}
+                                        onClick={() => {}}
+                                    />
+                                ))
+                            }
 
-                        <Markers />
+                            <Markers 
+                                type='text'
+                                placeholder='Novo Marcador'
+                                value={newLink}
+                                isNew
+                                onChange={e => setNewLink(e.target.value)}
+                                onClick={handleAddLink}
+                            />
+                        </div>
+
                     </Section>
 
                     <div>

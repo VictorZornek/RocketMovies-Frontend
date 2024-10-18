@@ -2,21 +2,24 @@ import { FiPlus, FiX } from "react-icons/fi";
 
 import { Container } from "./styles.js";
 
-import { ButtonText } from '../ButtonText';
-
-export function Markers({ ...rest}) {
+export function Markers({ placeholder, value, isNew, onClick, ...rest}) {
 
     return(
-        <Container>
-            <span>
-                React
-                <ButtonText icon={FiX} />    
-            </span>
+        <Container isNew={isNew} >
 
-            <div>
-                <input type="text" placeholder='Novo marcador' {...rest} />
-                <ButtonText icon={FiPlus} />
-            </div>
+            <input 
+                type="text" 
+                value={value}
+                placeholder={placeholder}
+                readOnly={!isNew}
+                {...rest}
+            />
+
+
+            <button onClick={onClick} type="button" className={isNew ? 'button-add' : 'button-delete'}>
+                { isNew ? <FiPlus /> : <FiX />}
+            </button>
+
         </Container>
     )
 }

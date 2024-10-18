@@ -1,49 +1,37 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    width: 100%;
-
     display: flex;
-    gap: 2.4rem;
-    
-    margin: 2.1rem 0 4rem;
-    padding: 1.6rem;
+    align-items: center;
 
-    border-radius: .8rem;
+    background-color: ${({ theme, isNew}) => isNew ? theme.COLORS.BACKGROUND_BLACK_700 : theme.COLORS.BLACK_500};
 
-    background-color: ${({ theme }) => theme.COLORS.BACKGROUND_BLACK_700};
+    color: ${({ theme }) => theme.COLORS.WHITE_500};
 
-    > span {
-        display: flex;
-        align-items: center;
-        gap: 1.6rem;
+    border: ${({ theme, isNew }) => isNew ? `2px dashed ${theme.COLORS.GRAY_400}` : 'none'};
 
-        padding: 1.6rem;
+    margin-bottom: 8px;
+    border-radius: 10px;
+    padding-right: 16px;
 
-        border-radius: 1rem;
-
-        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_700};
+    > button {
+        border: none;
+        background: none;
     }
 
-    > div {
-        display: flex;
-        align-items: center;
+    .button-add, .button-delete {
+        color: ${({ theme }) => theme.COLORS.PINK}
+    }
 
-        max-width: 20rem;
+    > input {
+        height: 56px;
+        width: 100%;
 
-        border: dashed ${({ theme }) => theme.COLORS.GRAY_400} 2px;
-        border-radius: 1rem;
+        padding: 12px;
 
-        
-        input {
-            width: 78%;
+        color: ${({ theme }) => theme.COLORS.WHITE_500};
+        background: transparent;
 
-            padding: 1.6rem;
-            
-            border: none;
-
-            background-color: transparent;
-            color: ${({ theme }) => theme.COLORS.WHITE_500};
-        }
+        border: 0;
     }
 `
