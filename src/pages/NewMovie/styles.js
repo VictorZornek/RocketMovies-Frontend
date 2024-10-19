@@ -80,6 +80,17 @@ export const Section = styled.section`
 
     > div {
         display: flex;
+        gap: 2.4rem;
+
+        max-height: 8.8rem;
+
+        margin-top: 2.4rem;
+
+        padding: 1.6rem;
+
+        border-radius: .8rem;
+
+        background-color: ${({ theme }) => theme.COLORS.BACKGROUND_BLACK_700};
     }
 `
 

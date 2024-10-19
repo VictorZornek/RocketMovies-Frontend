@@ -4,6 +4,9 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
 
+    width: 18rem;
+    height: 5.6rem;
+
     background-color: ${({ theme, isNew}) => isNew ? theme.COLORS.BACKGROUND_BLACK_700 : theme.COLORS.BLACK_500};
 
     color: ${({ theme }) => theme.COLORS.WHITE_500};
