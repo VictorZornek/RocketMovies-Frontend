@@ -16,6 +16,7 @@ export function NewMovie() {
     const [newTag, setNewTag] = useState([])
     const [title, setTitle] = useState("")
     const [description, setDescription] = useState("")
+    const [rating, setRating] = useState("")
 
     const navigate = useNavigate()
 
@@ -29,10 +30,23 @@ export function NewMovie() {
     }
 
     async function handleNewMovieNote() {
-        await api.post("/notes", {
-            title: title,
-            description: description,
-            tags: tags
+        if (!title || !description || !rating) {
+            return alert("É necessário preencher todos os campos.")
+        }
+
+        if (rating < 0 || rating > 5) {
+            return alert("A nota para o filme deve ser entre 0 e 5.")
+        }
+
+        if (newTag) {
+            return alert("Você deixou um marcador no campo para adicionar, mas não clicou em adicionar. Clique para adicionar ou deixe o campo vazio.")
+        }
+
+        await api.post("/movienotes", {
+            title,
+            description,
+            rating,
+            tags
         })
 
         alert("Nova nota de filme criada com sucesso!")
@@ -68,7 +82,10 @@ export function NewMovie() {
                             onChange={e => setTitle(e.target.value)} 
                         />
 
-                        <Input placeholder='Sua nota (de 0 a 5)' />
+                        <Input 
+                            placeholder='Sua nota (de 0 a 5)' 
+                            onChange={e => setRating(e.target.value)}
+                        />
                     </div>
 
                     <TextArea 
