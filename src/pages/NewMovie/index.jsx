@@ -10,18 +10,20 @@ import { TextArea } from '../../components/TextArea'
 import { Markers } from "../../components/Markers"
 
 export function NewMovie() {
-    const [links, setLinks] = useState([])
-    const [newLink, setNewLink] = useState("")
+    const [tags, setTags] = useState([])
+    const [newTag, setNewTag] = useState([])
 
-    function handleAddLink() {
-        setLinks(prevState => [...prevState, newLink])
-        setNewLink("")
+
+    function handleAddTag() {
+        setTags(prevState => [...prevState, newTag])
+        setNewTag("")
     }
 
-    function handleRemoveLink(deleted) {
-        setLinks(prevState => prevState.filter(link => link != deleted))
+    function handleRemoveTag(deleted) {
+        setTags(prevState => prevState.filter(tag => tag != deleted))
     }
 
+    
     return(
         <Container>
             <Header />
@@ -48,12 +50,12 @@ export function NewMovie() {
                         
                         <div>
                             {
-                                links.map((link, index) => (
+                                tags.map((tag, index) => (
                                     <Markers 
                                         key={String(index)}
                                         type='text'
-                                        value={link}
-                                        onClick={() => handleRemoveLink(link)}
+                                        value={tag}
+                                        onClick={() => handleRemoveTag(tag)}
                                     />
                                 ))
                             }
@@ -61,10 +63,10 @@ export function NewMovie() {
                             <Markers 
                                 type='text'
                                 placeholder='Novo Marcador'
-                                value={newLink}
+                                value={newTag}
                                 isNew
-                                onChange={e => setNewLink(e.target.value)}
-                                onClick={handleAddLink}
+                                onChange={e => setNewTag(e.target.value)}
+                                onClick={handleAddTag}
                             />
                         </div>
 
