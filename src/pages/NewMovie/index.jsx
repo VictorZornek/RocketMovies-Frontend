@@ -18,6 +18,10 @@ export function NewMovie() {
         setNewLink("")
     }
 
+    function handleRemoveLink(deleted) {
+        setLinks(prevState => prevState.filter(link => link != deleted))
+    }
+
     return(
         <Container>
             <Header />
@@ -49,7 +53,7 @@ export function NewMovie() {
                                         key={String(index)}
                                         type='text'
                                         value={link}
-                                        onClick={() => {}}
+                                        onClick={() => handleRemoveLink(link)}
                                     />
                                 ))
                             }
